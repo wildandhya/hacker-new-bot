@@ -4,13 +4,13 @@ import { ChartOptions, ReportPeriod } from "./types.ts";
 import { Expense } from "../models/expense.ts";
 
 export function formatDate(date: string): string {
-  return new Date(date).toLocaleString('id-ID', {
-    timeZone: 'Asia/Jakarta',
-    day: 'numeric',
-    month: 'long',
-    year: 'numeric',
-    hour: '2-digit',
-    minute: '2-digit'
+  return new Date(date).toLocaleString("id-ID", {
+    timeZone: "Asia/Jakarta",
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
   });
 }
 

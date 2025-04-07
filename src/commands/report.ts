@@ -104,7 +104,10 @@ export async function getReport(
   const total = filtered.reduce((sum, exp) => sum + exp.amount, 0);
 
   const headers = ["No", "Kategori", "Jumlah", "Catatan", "Tanggal"];
-  const rows = filtered.map((expense, index) => [
+  const sortedData = [...filtered].sort((a, b) =>
+    new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime()
+  );
+  const rows = sortedData.map((expense, index) => [
     (index + 1).toString(),
     expense.category.slice(0, 12),
     formatRupiah(expense.amount),
