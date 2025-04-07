@@ -3,7 +3,7 @@ dev: ## Run the bot with env loaded
 	@source env.sh && deno run --watch --allow-env --allow-import --allow-net --allow-read --unstable-kv poll.ts
 
 deploy: ## Deploy to deno deploy
-	deployctl deploy --project=marbot --entrypoint=server.ts
+	deployctl deploy --project=marbot --entrypoint=server.ts --prod
 
 format: ## Format code using deno fmt
 	@deno fmt

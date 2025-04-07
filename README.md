@@ -65,7 +65,7 @@ deployctl deploy --project=your-project-name --entrypoint=server.ts
 6. Set up Telegram Webhook:
    - Replace YOUR_BOT_TOKEN and YOUR_DENO_DEPLOY_URL
 ```bash
-curl -X POST https://api.telegram.org/bot<BOT_TOKEN>/setWebhook?url=<YOUR_DENO_DEPLOY_URL>/
+curl -X POST https://api.telegram.org/bot<BOT_TOKEN>/setWebhook?url=<YOUR_DENO_DEPLOY_URL>/<BOT_TOKEN>
 ```
 
 ## 📝 Commands
