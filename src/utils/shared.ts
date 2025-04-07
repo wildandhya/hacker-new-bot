@@ -1,13 +1,17 @@
 import { Context } from "grammy/mod.ts";
 import { chartBackgroundColors, expenseFormatRegex } from "./constants.ts";
-import { format, parseISO } from "https://esm.sh/date-fns@3.3.1";
-import { id } from "https://esm.sh/date-fns@3.3.1/locale";
 import { ChartOptions, ReportPeriod } from "./types.ts";
 import { Expense } from "../models/expense.ts";
 
 export function formatDate(date: string): string {
-  const parsedDate = parseISO(date);
-  return format(parsedDate, "d MMMM yyyy HH:mm", { locale: id });
+  return new Date(date).toLocaleString('id-ID', {
+    timeZone: 'Asia/Jakarta',
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit'
+  });
 }
 
 export function escapeMarkdownV2(text: string): string {
@@ -393,4 +397,10 @@ export function groupByDateNumber(
     labels: allLabels,
     datasets,
   };
+}
+
+export function toWIBISOString(date = new Date()): string {
+  const utc = date.getTime() + (date.getTimezoneOffset() * 60000); // UTC time
+  const wibOffset = 7 * 60 * 60000; // WIB = UTC+7
+  return new Date(utc + wibOffset).toISOString();
 }

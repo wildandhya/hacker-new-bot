@@ -12,3 +12,5 @@ deno.lock
 
 # logs or debug
 *.log
+
+tmp/
