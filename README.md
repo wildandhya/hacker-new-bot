@@ -59,7 +59,7 @@ deployctl login
    - Add BOT_TOKEN with your Telegram bot token
 5. Deploy your bot:
 ```bash
-make deploy
+deployctl deploy --project=your-project-name --entrypoint=server.ts
  ```
 
 6. Set up Telegram Webhook:
