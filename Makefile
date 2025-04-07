@@ -11,3 +11,8 @@ format: ## Format code using deno fmt
 lint: ## Lint your code
 	@deno lint
 
+set-webhook: ## Set the webhook for the bot
+	@curl -X POST https://api.telegram.org/bot<BOT_TOKEN>/setWebhook?url=<YOUR_DENO_DEPLOY_URL>/<BOT_TOKEN>
+
+del-webhook: ## Delete the webhook for the bot
+	@curl -X POST https://api.telegram.org/bot<BOT_TOKEN>/deleteWebhook
