@@ -44,7 +44,7 @@ make dev
 ### Production Deployment
 1. Install Deno Deploy CLI:
 ```bash
-deno install -A --no-check -r -f https://deno.land/x/deploy/deployctl.ts
+deno install -gArf jsr:@deno/deployctl
 ```
 
 2. Login to Deno Deploy:
