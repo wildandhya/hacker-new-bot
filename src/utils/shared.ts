@@ -265,8 +265,11 @@ export function groupByCategory(
   };
 }
 
-const getRandomColor = () =>
-  `hsl(${Math.floor(Math.random() * 360)}, 70%, 60%)`;
+const getRandomColor = (index: number) => {
+  // Use golden ratio for better color distribution
+  const hue = (index * 137.508) % 360; // golden angle in degrees
+  return `hsl(${hue}, 70%, 60%)`;
+};
 
 export function groupByDay(
   data: Expense[],
@@ -292,10 +295,10 @@ export function groupByDay(
   });
 
   const labels = dayNames;
-  const datasets = Object.entries(grouped).map(([category, values]) => ({
+  const datasets = Object.entries(grouped).map(([category, values], index) => ({
     label: category.charAt(0).toUpperCase() + category.slice(1),
     data: labels.map((day) => values[day] || 0),
-    backgroundColor: [getRandomColor()],
+    backgroundColor: [getRandomColor(index)],
   }));
 
   return { labels, datasets };
@@ -329,10 +332,10 @@ export function groupByMonth(
   });
 
   const labels = monthNames;
-  const datasets = Object.entries(grouped).map(([category, values]) => ({
+  const datasets = Object.entries(grouped).map(([category, values], index) => ({
     label: category.charAt(0).toUpperCase() + category.slice(1),
     data: labels.map((month) => values[month] || 0),
-    backgroundColor: [getRandomColor()],
+    backgroundColor: [getRandomColor(index)],
   }));
 
   return {
@@ -387,10 +390,10 @@ export function groupByDateNumber(
     return +parse(a) - +parse(b);
   });
 
-  const datasets = Object.entries(grouped).map(([category, values]) => ({
+  const datasets = Object.entries(grouped).map(([category, values], index) => ({
     label: category.charAt(0).toUpperCase() + category.slice(1),
     data: allLabels.map((label) => values[label] || 0),
-    backgroundColor: [getRandomColor()],
+    backgroundColor: [getRandomColor(index)],
   }));
 
   return {
