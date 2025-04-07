@@ -68,7 +68,7 @@ deployctl login
 5. Deploy your bot:
 
 ```bash
-deployctl deploy --project=your-project-name --entrypoint=server.ts
+deployctl deploy --project=your-project-name --entrypoint=server.ts --prod
 ```
 
 6. Set up Telegram Webhook:
