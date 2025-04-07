@@ -1,0 +1,9 @@
+{
+  "imports": {
+    "grammy/": "https://deno.land/x/grammy@v1.35.1/",
+    "@grammyjs/menu": "https://deno.land/x/grammy_menu@v1.3.0/mod.ts",
+    "@grammyjs/storages": "https://deno.land/x/grammy_storages@v2.5.1/mod.ts",
+    "@grammyjs/conversations": "https://deno.land/x/grammy_conversations@v2.0.1/mod.ts",
+    "date-fns": "https://esm.sh/date-fns@3.3.1"
+  }
+}

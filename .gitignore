@@ -1,0 +1,14 @@
+# env
+env.sh
+
+# editor / system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# lock file
+deno.lock
+
+# logs or debug
+*.log
