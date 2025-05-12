@@ -2,9 +2,11 @@ export const kv = await Deno.openKv();
 
 export async function create<T extends { id: string }>(
   keyPrefix: string,
+  key: string,
   item: T,
+  expireIn: number
 ): Promise<void> {
-  await kv.set([keyPrefix, item.id], item);
+  await kv.set([keyPrefix, key], item, { expireIn: expireIn });
 }
 
 export async function read<T>(

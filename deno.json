@@ -5,5 +5,13 @@
     "@grammyjs/storages": "https://deno.land/x/grammy_storages@v2.5.1/mod.ts",
     "@grammyjs/conversations": "https://deno.land/x/grammy_conversations@v2.0.1/mod.ts",
     "date-fns": "https://esm.sh/date-fns@3.3.1"
+  },
+  "deploy": {
+    "project": "4e42d774-e15f-45be-b12a-41330f4f67b2",
+    "exclude": [
+      "**/node_modules"
+    ],
+    "include": [],
+    "entrypoint": "server.ts"
   }
 }

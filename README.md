@@ -1,27 +1,6 @@
-# 🤖 Bot Expense Tracker
+# 🤖 Bot Hacker News
 
-A Telegram bot built with Deno and grammY to help track daily expenses.
-
-## 🌟 Features
-
-- 💰 Track expenses with categories
-- 📊 Generate reports (daily, weekly, monthly, yearly)
-- 📈 Visualize spending with charts
-- 👤 Personal expense tracking
-- 💾 Data persistence using Deno KV
-
-## 🔜 Upcoming Features
-
-- ⏰ Daily expense reminders
-- 💵 Monthly budget planning and alerts
-- 🔄 Recurring expense automation
-
-## 🛠️ Tech Stack
-
-- [Deno](https://deno.land/) - Runtime environment
-- [grammY](https://grammy.dev/) - Telegram Bot framework
-- [Deno KV](https://deno.com/kv) - Key-value database
-- [QuickChart](https://quickchart.io/) - Chart generation
+A Telegram bot built with Deno and grammY to get Hacker News.
 
 ## 🚀 Getting Started
 
@@ -30,16 +9,14 @@ A Telegram bot built with Deno and grammY to help track daily expenses.
 1. Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/marbot.git
-cd marbot
+git clone https://github.com/yourusername/hacker-news-bot.git
+cd hacker-news-bot
 ```
 
-2. Create a `env.sh` file:
-
-```env
-export BOT_TOKEN=your_telegram_bot_token
+2. Copy `env.sh.example` file:
+```bash
+cp env.sh.example env.sh
 ```
-
 3. Run the bot:
 
 ```bash
@@ -76,32 +53,4 @@ deployctl deploy --project=your-project-name --entrypoint=server.ts --prod
 
 ```bash
 curl -X POST https://api.telegram.org/bot<BOT_TOKEN>/setWebhook?url=<YOUR_DENO_DEPLOY_URL>/<BOT_TOKEN>
-```
-
-## 📝 Commands
-
-- `/start` - Start the bot
-- `/menu` - Show main menu
-- `/catat` - Record new expense
-- `/laporan` - View expense reports
-- `/export` - Export expense data to CSV
-
-## 📊 Expense Format
-
-```
-/catat category amount note 
-# or use free text
-makan 50000 note
-```
-
-Example:
-
-```
-/catat makan 50000 lunch with friends
-```
-
-Multiple expenses:
-
-```
-/catat makan 50000 lunch, transport 25000 grab
 ```

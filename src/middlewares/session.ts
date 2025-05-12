@@ -1,5 +1,5 @@
 export interface SessionData {
-  __conversation?: unknown;
+  lastProcessedStoryIds?: unknown;
 }
 
 export function initialSession(): SessionData {
