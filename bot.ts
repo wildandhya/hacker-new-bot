@@ -41,7 +41,9 @@ async function sendPeriodicNotification() {
         Number(env.MAX_STORIES),
         Number(env.STORY_AGE_HOURS),
       );
-      allStories.push(...stories);
+      allStories.push(...stories.map(story => ({ ...story, type: type })));
+
+      console.log(`Fetched ${stories.length} ${type} stories`);
     }
 
     const seen = new Set<number>();

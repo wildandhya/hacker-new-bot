@@ -1,4 +1,4 @@
-import { HackerNewsStory } from "../services/hacker-news.ts";
+import { HackerNewsStory, StoryType } from "../services/hacker-news.ts";
 
 export function escapeMarkdown(text: string): string {
   return text.replace(/([_*\[\]()~`>#\+\-=|{}.!])/g, '\\$1');
@@ -6,7 +6,8 @@ export function escapeMarkdown(text: string): string {
 
 export function formatStoryMessage(story: HackerNewsStory): string {
   const age = Math.round((Date.now() / 1000 - story.time) / 3600);
-  return `🔥 *Hacker News Top Story* 🔥
+  const typeAlias = story.type === 'topstories' ? 'Top Stories' : story.type === "newstories" ? 'New Stories' : 'Best Stories';
+  return `🔥 *Hacker News ${typeAlias}* 🔥
 
 *${escapeMarkdown(story.title)}*
 
