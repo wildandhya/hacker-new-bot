@@ -7,10 +7,9 @@ export function escapeMarkdown(text: string): string {
 export function formatStoryMessage(story: HackerNewsStory): string {
   const age = Math.round((Date.now() / 1000 - story.time) / 3600);
   const typeAlias = story.type === 'topstories' ? 'Top Stories' : story.type === "newstories" ? 'New Stories' : 'Best Stories';
-  return `🔥 *Hacker News ${typeAlias}* 🔥
+  return `📰 *Hacker News: *${escapeMarkdown(story.title)}*
 
-*${escapeMarkdown(story.title)}*
-
+📰 Type: ${typeAlias}
 👤 Author: ${escapeMarkdown(story.by)}
 ⏰ ${age} hours ago
 👍 Votes: ${story.score}
